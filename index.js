@@ -30,7 +30,8 @@ async function run() {
     const database = client.db("allPosts");
     const postCollection = database.collection("postCollection");
 
-    // Our Api From here
+    // <---------- Our Api From here ---------- />
+    
     // Post API for create post
     app.post("/posts", async (req, res) => {
       const newPost = req.body;
