@@ -3,7 +3,8 @@ const {postCollection}=require("../../lib/collection");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const newPost = req.body;
+  const newPost = {...req.body,
+    createdAt: new Date()};
   console.log(newPost);
   const result = await postCollection.insertOne(newPost);
   res.send(result);
