@@ -14,11 +14,14 @@ const port = process.env.PORT || 5000;
 const addPost=require('./routes/posts/addPost');
 const getPost=require('./routes/posts/getPost');
 const handleLike=require('./routes/posts/handleLike');
-
+const addComment = require('./routes/posts/addComment');
+const getComments = require("./routes/posts/getComments");
 //------- use routes --------//
 app.use('/add-posts',addPost);
 app.use('/get-posts',getPost);
 app.use("/get-posts", handleLike);
+app.use("/add-comments", addComment);
+app.use("/get-comments", getComments);
 
 app.get("/", (_, res) => {
   res.send("Pet Planetoid server is running..");
