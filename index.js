@@ -16,12 +16,14 @@ const getPost=require('./routes/posts/getPost');
 const handleLike=require('./routes/posts/handleLike');
 const addComment = require('./routes/posts/addComment');
 const getComments = require("./routes/posts/getComments");
+const getVetInfo = require("./routes/vet/getVetInfo");
 //------- use routes --------//
 app.use('/add-posts',addPost);
 app.use('/get-posts',getPost);
 app.use("/get-posts", handleLike);
 app.use("/add-comments", addComment);
 app.use("/get-comments", getComments);
+app.use("/get-vetinfo", getVetInfo);
 
 app.get("/", (_, res) => {
   res.send("Pet Planetoid server is running..");
